@@ -1,0 +1,15 @@
+version: '3'
+services:
+  elasticsearch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+      - esdata:/var/lib/elasticsearch
+
+volumes:
+  esdata:
+    driver: local
